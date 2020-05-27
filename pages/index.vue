@@ -1,27 +1,25 @@
 <template>
-<div >
-<div 
-class="fscreenlog">
-
-  <b-button 
-  class="startbtn"
-  variant="outline-primary"
-  @click="$bvToast.show('login-toast')"
-  >
-  Start Game
-  </b-button>
-
-  <b-toast id="login-toast" title="Sign in with Google" static no-auto-hide>
-      Choose an account to continue
-      <br>
+  <div>
+    <div class="fscreenlog">
       <b-button
-      variant="outline-primary"
-      to="/stage">
-      Next
-      </b-button>
-  </b-toast>
-</div>
-</div>
+        class="startbtn"
+        variant="outline-primary"
+        @click="$bvToast.show('login-toast')"
+      >Start Game</b-button>
+
+      <b-toast id="login-toast" title="Sign in with Google" static no-auto-hide>
+        Choose an account to continue
+        <br />
+        <b-button :pressed.sync="myToggle" variant="primary">
+          <b-avatar variant="primary" text="SL"></b-avatar>
+        </b-button>
+
+        <p>Spark A Life</p>
+        <br />
+        <b-button variant="outline-primary" to="/stage">Next</b-button>
+      </b-toast>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -30,6 +28,7 @@ export default {
   },
   data(){
     return{
+      myToggle: false,
       bg_src : { backgroundImage: "url(../../assets/Login_bg.png)" }
     };
   }
@@ -47,8 +46,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -69,22 +68,20 @@ export default {
 }
 </style>
 <style scoped>
-
-.fscreenlog{
+.fscreenlog {
   width: 100vw;
   height: 100vh;
-  background-repeat:no-repeat;
-  background-position-x:-75px;
-  background-size:cover;
-  background-image: url("../assets/Login_bg.png") ;
+  background-repeat: no-repeat;
+  background-position-x: -75px;
+  background-size: cover;
+  background-image: url("../assets/Login_bg.png");
 }
 
-.startbtn{
+.startbtn {
   position: absolute;
-  bottom:25vh;
-  left:42.5vw;
+  bottom: 25vh;
+  left: 42.5vw;
   width: 7.75vw;
   height: 10vh;
 }
-
 </style>
